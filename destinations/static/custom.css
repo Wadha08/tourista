@@ -1,0 +1,21 @@
+.wadha{
+ background-color: white;
+
+}
+
+header {
+  padding: 70px 0 80px;
+}
+
+.wide {
+  width:100%;
+  height:100%;
+  /*height:calc(100% - 1px);*/
+  height:100px;
+  background-size:cover;
+}
+
+.my-bg{
+	background-image: url('/static/header.jpg/');
+	text-align- center;
+}

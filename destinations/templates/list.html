@@ -1,16 +1,33 @@
 {% extends "base.html" %} 
-
+{% load static %}
 {% block title %}List{% endblock title %}
 
 {% block content %}
 <br>
-<div class="row">
+
+<header class="bg-primary text-white my-bg ">
+  <div class="container text-center">
+    <h1> Welcome to Tourista</h1>
+    <p class="lead" style="position:top;"></p>
+  </div>
+</header>
+
+<div class="container my-5">
+<div class="row"> 
   {% for destination in destinations %}
-  <a href="{% url 'destination-detail' destination.id %}">
-    <img src="{{destination.pretty_picture.url}}" />
-    <p>{{destination.name}}</p>
-    <p>{{destination.activities}}</p>
-  </a>
+  <div class = "col-12 col-md-3 col-lg-4">
+  <div class="card" style="width: 18rem;">
+  <img src="{{destination.pretty_picture.url}}" class="img-fluid img-thumbnail" alt="Responsive image">
+    
+  <div class="card-body">
+  	<a href="{% url 'destination-detail' destination.id %}" class="badge badge-dark btn-lg">
+  		{{destination.name}}</a>
+    <p class="card-text"><h6> Activites: {{destination.activities}} <h6></p>
+  </div>
+</div>
+</div>
   {% endfor %}
 </div>
+</div>
 {% endblock content %}
+

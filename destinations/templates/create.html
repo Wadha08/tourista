@@ -4,9 +4,10 @@
 {% block title %}Create{% endblock title %}
 
 {% block content %}
+<div class ="jumbotron text-light" style= "background-color:#083B6F;">
 <form action="{% url 'destination-create' %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-  {{form.as_p}}
+  {{form|crispy}}
   <input type="submit" value="Create">
 </form>
 {% endblock content %}
